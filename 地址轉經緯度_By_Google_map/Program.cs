@@ -29,7 +29,11 @@ namespace 地址轉經緯度_By_Google_map
                 var Id = 1;
                 while ((line = file.ReadLine()) != null && Id <= 200)
                 {
-                    Rootobject obj = NewMethod(line);
+                    //Rootobject obj = NewMethod(line);
+                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/geocode/json?address={0}&&sensor=false&language=zh-tw", line);
+                    var buffer = new WebClient().DownloadData(APIUrl);
+                    var json = Encoding.UTF8.GetString(buffer);
+                    var obj = JsonConvert.DeserializeObject<Rootobject>(json);
                     try
                     {
                         Console.WriteLine(Id + ":" + line + "," + obj.results[0].geometry.location.lat + "," + obj.results[0].geometry.location.lng);
@@ -39,7 +43,6 @@ namespace 地址轉經緯度_By_Google_map
                     {
                         Console.WriteLine($"第{Id}筆資料錯誤:" + line);
                         FailFile.WriteLine($"第{Id}筆資料錯誤" + line);
-
                     }
                     if (Id % 100 == 0)
                         Thread.Sleep(1);
@@ -57,14 +60,10 @@ namespace 地址轉經緯度_By_Google_map
             }
         }
 
-        private static Rootobject NewMethod(string line)
-        {
+        //private static Rootobject NewMethod(string line)
+        //{
 
-            string APIUrl = string.Format("https://maps.googleapis.com/maps/api/geocode/json?address={0}&&sensor=false&language=zh-tw", line);
-            var buffer = new WebClient().DownloadData(APIUrl);
-            var json = Encoding.UTF8.GetString(buffer);
-            var obj = JsonConvert.DeserializeObject<Rootobject>(json);
-            return obj;
-        }
+        //    //return obj;
+        //}
     }
 }

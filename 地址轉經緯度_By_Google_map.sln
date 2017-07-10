@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "地址轉經緯度_By_Google_map", "地址轉經緯度_By_Google_map\地址轉經緯度_By_Google_map.csproj", "{449A8358-7E64-4FDD-8BA0-7A9889845B0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "距離計算", "距離計算\距離計算.csproj", "{85BE28D5-6237-4F77-81C8-4035FCF704DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_Read", "CSV_Read\CSV_Read.csproj", "{F013D096-511E-42A1-B57B-F089656C4C11}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{449A8358-7E64-4FDD-8BA0-7A9889845B0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{449A8358-7E64-4FDD-8BA0-7A9889845B0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{449A8358-7E64-4FDD-8BA0-7A9889845B0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85BE28D5-6237-4F77-81C8-4035FCF704DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85BE28D5-6237-4F77-81C8-4035FCF704DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85BE28D5-6237-4F77-81C8-4035FCF704DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85BE28D5-6237-4F77-81C8-4035FCF704DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F013D096-511E-42A1-B57B-F089656C4C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F013D096-511E-42A1-B57B-F089656C4C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F013D096-511E-42A1-B57B-F089656C4C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F013D096-511E-42A1-B57B-F089656C4C11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
