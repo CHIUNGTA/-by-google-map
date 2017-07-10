@@ -11,9 +11,11 @@ namespace CSV_Read
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("輸入地址:");
+            var add = Console.ReadLine();
             try
             {
-                using (StreamReader SR = new StreamReader("D:\\testadd.csv"))
+                using (StreamReader SR = new StreamReader(add))
 
                 {
                     string Line;
