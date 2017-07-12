@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV_Read", "CSV_Read\CSV_Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "經緯度轉地址", "經緯度轉地址\經緯度轉地址.csproj", "{FEC87E01-9E06-416F-AED0-9E1F9CF83B52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "透過經緯度環域附近景點", "透過經緯度環域附近景點\透過經緯度環域附近景點.csproj", "{2588FF01-3933-4991-8F02-2D56E39ED6BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{FEC87E01-9E06-416F-AED0-9E1F9CF83B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC87E01-9E06-416F-AED0-9E1F9CF83B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC87E01-9E06-416F-AED0-9E1F9CF83B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

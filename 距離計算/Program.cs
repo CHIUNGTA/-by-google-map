@@ -23,7 +23,6 @@ namespace 距離計算
             {
                 //using (StreamReader SR = new StreamReader(add))
                     var file = new System.IO.StreamReader(add);
-                {
                     string Line=string.Empty;
                     Line = file.ReadLine();   //避免欄位名稱寫入
                     string[] FieldLine = Line.Split(',');
@@ -42,7 +41,7 @@ namespace 距離計算
                     SuccessFile.Close();
                     Console.WriteLine("轉檔完成，請至D:查看");
                     Console.ReadLine();
-                }
+            
             }
             catch (Exception)
             {
