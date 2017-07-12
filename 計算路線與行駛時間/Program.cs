@@ -37,6 +37,7 @@ namespace 計算路線與行駛時間
                 SuccessFile.WriteLine(ReadLine_Array[0] + "," + ReadLine_Array[1] + "," + ReadLine_Array[2] + "," + ReadLine_Array[3] + "," + ReadLine_Array[4] + ","+ obj.routes[0].legs[0].distance.value+","+ obj.routes[0].legs[0].duration.value+","+type);
             }
             SuccessFile.Close();
+            Console.WriteLine("已轉檔完成，請至D:\\查看完成檔案");
             Console.ReadLine();
         }
     }
