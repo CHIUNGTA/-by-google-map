@@ -29,7 +29,7 @@ namespace 計算路線與行駛時間
             while ((Line = file.ReadLine()) != null)
             {
                 string[] ReadLine_Array = Line.Split(',');
-                string APIUrl = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0}&destination={1}&mode={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw",ReadLine_Array[2]+","+ReadLine_Array[1] , ReadLine_Array[4] + "," + ReadLine_Array[3] ,type);
+                string APIUrl = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0}&destination={1}&mode={2}&key=Your____key&language=zh-tw", ReadLine_Array[2]+","+ReadLine_Array[1] , ReadLine_Array[4] + "," + ReadLine_Array[3] ,type);
                 var buffer = new WebClient().DownloadData(APIUrl);
                 string data = Encoding.UTF8.GetString(buffer);
                 var obj = JsonConvert.DeserializeObject<Rootobject>(data);
