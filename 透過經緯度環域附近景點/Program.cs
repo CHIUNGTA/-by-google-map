@@ -20,23 +20,31 @@ namespace 透過經緯度環域附近景點
             var file = new System.IO.StreamReader(add);
             string Line = string.Empty;
             Line = file.ReadLine();
-            SuccessFile.WriteLine(Line);
+            SuccessFile.WriteLine(Line + "," + "查詢結果" + "," + "X" + "," + "Y");
+            Line = Get_local_information(SuccessFile, file);
+            SuccessFile.Close();
+            Console.WriteLine("轉檔已完成!");
+            Console.ReadLine();
+        }
+
+        private static string Get_local_information(StreamWriter SuccessFile, StreamReader file)
+        {
+            string Line;
             while ((Line = file.ReadLine()) != null)
             {
                 try
                 {
                     string[] ReadLine_Array = Line.Split(',');
-                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw" , ReadLine_Array[2]+","+ReadLine_Array[1] , ReadLine_Array[3] ,ReadLine_Array[4]);
+                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw", ReadLine_Array[2] + "," + ReadLine_Array[1], ReadLine_Array[4], ReadLine_Array[5]);
                     var buffer = new WebClient().DownloadData(APIUrl);
                     string data = Encoding.UTF8.GetString(buffer);
                     var obj = JsonConvert.DeserializeObject<Rootobject>(data);
-                         foreach (var x in obj.results)
-                         {
-                              Console.WriteLine(ReadLine_Array[0] +"鄰近有...."+x.name+","+x.geometry.location.lng+","+x.geometry.location.lat);
-                              SuccessFile.WriteLine(ReadLine_Array[0] + "鄰近有...." + x.name + "," + x.geometry.location.lng + "," + x.geometry.location.lat
-                                  );
-                            
-                         }
+                    foreach (var x in obj.results)
+                    {
+                        Console.WriteLine(ReadLine_Array[0] + "查詢結果為...." + x.name + "," + x.geometry.location.lng + "," + x.geometry.location.lat);
+                        SuccessFile.WriteLine(ReadLine_Array[0] + "," + ReadLine_Array[1] + "," + ReadLine_Array[2] + "," + ReadLine_Array[3] + "," + ReadLine_Array[4] + "," + ReadLine_Array[5] + "," + x.name + "," + x.geometry.location.lng + "," + x.geometry.location.lat
+                            );
+                    }
                 }
                 catch (Exception)
                 {
@@ -44,11 +52,8 @@ namespace 透過經緯度環域附近景點
                     Console.ReadLine();
                 }
             }
-                    SuccessFile.Close();
-                    Console.WriteLine("轉檔已完成!");
-                         Console.ReadLine();
 
-
+            return Line;
         }
     }
 }
