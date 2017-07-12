@@ -31,7 +31,7 @@ namespace 距離計算
                     while ((Line =file.ReadLine()) != null)
                     {
                         string[] ReadLine_Array = Line.Split(',');
-                        string APIUrl = string.Format($"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={ReadLine_Array[1]+","+ ReadLine_Array[2]}&destinations={ReadLine_Array[3] + "," + ReadLine_Array[4]}&language=zh-tw&key=YOUR_____KEY");
+                        string APIUrl = string.Format($"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={ReadLine_Array[1]+","+ ReadLine_Array[2]}&destinations={ReadLine_Array[3] + "," + ReadLine_Array[4]}&key=YOUR______KEY&language=zh-tw");
                         var buffer = new WebClient().DownloadData(APIUrl);
                         string data = Encoding.UTF8.GetString(buffer);
                         var obj = JsonConvert.DeserializeObject<Rootobject>(data);
