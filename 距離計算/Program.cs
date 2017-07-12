@@ -16,13 +16,13 @@ namespace 距離計算
         static void Main(string[] args)
         {
             Console.WriteLine("請輸入轉換文字檔(.csv)之連結地址");
-            var add = Console.ReadLine();
+            var FileAddress = Console.ReadLine();
             StreamWriter SuccessFile = new StreamWriter("D:\\經緯度轉距離完成檔.txt");
             Again:
             try
             {
                 //using (StreamReader SR = new StreamReader(add))
-                    var file = new System.IO.StreamReader(add);
+                    var file = new System.IO.StreamReader(FileAddress);
                     string Line=string.Empty;
                     Line = file.ReadLine();   //避免欄位名稱寫入
                     string[] FieldLine = Line.Split(',');
@@ -31,7 +31,7 @@ namespace 距離計算
                     while ((Line =file.ReadLine()) != null)
                     {
                         string[] ReadLine_Array = Line.Split(',');
-                        string APIUrl = string.Format($"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={ReadLine_Array[1]+","+ ReadLine_Array[2]}&destinations={ReadLine_Array[3] + "," + ReadLine_Array[4]}&key=your__key&language=zh-tw");
+                        string APIUrl = string.Format($"https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins={ReadLine_Array[1]+","+ ReadLine_Array[2]}&destinations={ReadLine_Array[3] + "," + ReadLine_Array[4]}&key=AIzaSyDTqOSVYjQX5Pkrt3RBJmSWgGLVmNQiy6k&language=zh-tw");
                         var buffer = new WebClient().DownloadData(APIUrl);
                         string data = Encoding.UTF8.GetString(buffer);
                         var obj = JsonConvert.DeserializeObject<Rootobject>(data);

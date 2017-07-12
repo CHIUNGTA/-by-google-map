@@ -15,14 +15,14 @@ namespace 經緯度轉地址
         static void Main(string[] args)
         {
             Console.WriteLine("請輸入轉換文字檔(.csv)之連結地址");
-            var add = Console.ReadLine();
+            var FileAddress = Console.ReadLine();
             StreamWriter successfile = new StreamWriter("D:\\經緯度轉地址檔.txt");
 
             again:
             try
             {
                 //ReadTxtFile
-                var file = new System.IO.StreamReader(add);
+                var file = new System.IO.StreamReader(FileAddress);
                 //Create Success File & Fail File
                 string line=string.Empty;
                 line = file.ReadLine();

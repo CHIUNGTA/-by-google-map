@@ -17,11 +17,11 @@ namespace 地址轉經緯度_By_Google_map
         {
             again:
             Console.WriteLine("請輸入轉換文字檔(.txt)之連結地址");
-            string add = Console.ReadLine();
+            string FileAddress = Console.ReadLine();
             try
             {
                 //ReadTxtFile
-                var file = new System.IO.StreamReader(add);
+                var file = new System.IO.StreamReader(FileAddress);
                 //Create Success File & Fail File
                 StreamWriter SuccessFile = new StreamWriter("D:\\轉檔完成檔-成功.txt");
                 StreamWriter FailFile = new StreamWriter("D:\\轉檔完成檔-失敗.txt");

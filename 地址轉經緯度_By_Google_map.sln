@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "經緯度轉地址", "經�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "透過經緯度環域附近景點", "透過經緯度環域附近景點\透過經緯度環域附近景點.csproj", "{2588FF01-3933-4991-8F02-2D56E39ED6BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "計算路線與行駛時間", "計算路線與行駛時間\計算路線與行駛時間.csproj", "{031073A7-82D4-49AB-9663-5B7D7E2F5B1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2588FF01-3933-4991-8F02-2D56E39ED6BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{031073A7-82D4-49AB-9663-5B7D7E2F5B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{031073A7-82D4-49AB-9663-5B7D7E2F5B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{031073A7-82D4-49AB-9663-5B7D7E2F5B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{031073A7-82D4-49AB-9663-5B7D7E2F5B1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
