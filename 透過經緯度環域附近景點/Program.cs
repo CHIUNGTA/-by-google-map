@@ -40,7 +40,7 @@ namespace 透過經緯度環域附近景點
                 try
                 {
                     string[] ReadLine_Array = Line.Split(',');
-                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw", ReadLine_Array[2] + "," + ReadLine_Array[1],radius,type);
+                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=your_key&language=zh-tw", ReadLine_Array[2] + "," + ReadLine_Array[1],radius,type);
                     var buffer = new WebClient().DownloadData(APIUrl);
                     string data = Encoding.UTF8.GetString(buffer);
                     var obj = JsonConvert.DeserializeObject<Rootobject>(data);
