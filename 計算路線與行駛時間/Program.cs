@@ -16,20 +16,23 @@ namespace 計算路線與行駛時間
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("請輸入轉換文字檔(.csv)之連結地址");
             //取得用戶轉換資料地址
+            Console.WriteLine("請輸入轉換文字檔(.csv)之連結地址");
             var FileAddress = Console.ReadLine();
+            //取得旅行種類
             Console.WriteLine("請輸入交通類型(Driving,Waliking)");
             var type = Console.ReadLine();
             StreamWriter SuccessFile = new StreamWriter("D:\\路線距離與時間計算.txt");
-            var file = new System.IO.StreamReader(FileAddress);
+            //讀取文字包
+            System.Text.Encoding encode = System.Text.Encoding.GetEncoding("big5");
+            StreamReader file = new StreamReader(FileAddress, encode);
             string Line = string.Empty;
             Line = file.ReadLine();
             SuccessFile.WriteLine(Line+","+"距離"+"," +"時間" + "," +"類型");
             while ((Line = file.ReadLine()) != null)
             {
                 string[] ReadLine_Array = Line.Split(',');
-                string APIUrl = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0}&destination={1}&mode={2}&key=Your____key&language=zh-tw", ReadLine_Array[2]+","+ReadLine_Array[1] , ReadLine_Array[4] + "," + ReadLine_Array[3] ,type);
+                string APIUrl = string.Format("https://maps.googleapis.com/maps/api/directions/json?origin={0}&destination={1}&mode={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw",ReadLine_Array[2]+","+ReadLine_Array[1] , ReadLine_Array[4] + "," + ReadLine_Array[3] ,type);
                 var buffer = new WebClient().DownloadData(APIUrl);
                 string data = Encoding.UTF8.GetString(buffer);
                 var obj = JsonConvert.DeserializeObject<Rootobject>(data);

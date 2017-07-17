@@ -15,13 +15,13 @@ namespace 地址轉經緯度_By_Google_map
     {
         static void Main(string[] args)
         {
-            again:
             Console.WriteLine("請輸入轉換文字檔(.txt)之連結地址");
             string FileAddress = Console.ReadLine();
             try
             {
                 //ReadTxtFile
-                var file = new System.IO.StreamReader(FileAddress);
+                System.Text.Encoding encode = System.Text.Encoding.GetEncoding("big5");
+                StreamReader file = new StreamReader(FileAddress, encode);
                 //Create Success File & Fail File
                 StreamWriter SuccessFile = new StreamWriter("D:\\轉檔完成檔-成功.txt");
                 StreamWriter FailFile = new StreamWriter("D:\\轉檔完成檔-失敗.txt");
@@ -44,8 +44,6 @@ namespace 地址轉經緯度_By_Google_map
                         Console.WriteLine($"第{Id}筆資料錯誤:" + line);
                         FailFile.WriteLine($"第{Id}筆資料錯誤" + line);
                     }
-                    if (Id % 100 == 0)
-                        Thread.Sleep(1);
                     Id++;
                 }
                 SuccessFile.Close();
@@ -56,7 +54,6 @@ namespace 地址轉經緯度_By_Google_map
             catch
             {
                 Console.WriteLine("請輸入正確目標地址");
-                goto again;
             }
         }
 

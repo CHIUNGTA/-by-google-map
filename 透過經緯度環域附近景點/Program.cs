@@ -21,7 +21,8 @@ namespace 透過經緯度環域附近景點
             Console.WriteLine("請輸入搜尋類型，如bus_station或是restaurant");
             string type = Console.ReadLine();
             StreamWriter SuccessFile = new StreamWriter("D:\\經緯度鄰近之景點.txt");
-            var file = new System.IO.StreamReader(FileAddress);
+            System.Text.Encoding encode =System.Text.Encoding.GetEncoding("big5");
+            var file = new System.IO.StreamReader(FileAddress,encode);
             string Line = string.Empty;
             Line = file.ReadLine();
             SuccessFile.WriteLine(Line + "," + "查詢結果" + "," + "X" + "," + "Y");
@@ -39,7 +40,7 @@ namespace 透過經緯度環域附近景點
                 try
                 {
                     string[] ReadLine_Array = Line.Split(',');
-                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=Your____key&language=zh-tw", ReadLine_Array[2] + "," + ReadLine_Array[1],radius,type);
+                    string APIUrl = string.Format("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location={0}&radius={1}&type={2}&key=AIzaSyAf8uwaEFaa7-x153Q2XoNuNcn68ARjTxg&language=zh-tw", ReadLine_Array[2] + "," + ReadLine_Array[1],radius,type);
                     var buffer = new WebClient().DownloadData(APIUrl);
                     string data = Encoding.UTF8.GetString(buffer);
                     var obj = JsonConvert.DeserializeObject<Rootobject>(data);
